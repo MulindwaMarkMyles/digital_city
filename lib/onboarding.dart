@@ -1,9 +1,8 @@
 import 'package:intro_screen_onboarding_flutter/intro_app.dart';
-import 'package:intro_screen_onboarding_flutter/introscreenonboarding.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:education_app/login.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intro_screen_onboarding_flutter/introscreenonboarding.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -74,16 +73,15 @@ class _OnboardingState extends State<Onboarding> {
       home: Scaffold(
         body: Stack(
           children: [
-            // Transparent SVG background shape
-            Positioned.fill(
-              child: SvgPicture.asset(
-                'assets/blob.svg', // Your transparent SVG path
-                fit: BoxFit.cover, // Make it cover the whole screen
-              ),
-            ),
             // Onboarding content on top of the shape
             IntroScreenOnboarding(
+              foregroundColor: Colors.black,
               introductionList: list,
+              skipTextStyle: TextStyle(
+                  color: Colors.black,
+                  fontFamily: GoogleFonts.roboto().fontFamily,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w600),
               onTapSkipButton: () {
                 Navigator.push(
                   context,
@@ -93,9 +91,45 @@ class _OnboardingState extends State<Onboarding> {
                 );
               },
             ),
+            // Shape behind the onboarding content that ignores touch events
+            IgnorePointer(
+              child: ClipPath(
+                clipper: CurvedBottomClipper(),
+                child: Container(
+                  height: 300, // Adjust the height to your preference
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(
+                        94, 68, 137, 255), // Adjust color as needed
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+// Custom clipper for the curved shape
+class CurvedBottomClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0.0, size.height - 100); // Start the path at bottom left
+    var firstControlPoint =
+        Offset(size.width / 6, size.height / 2); // Control point for the curve
+    var firstEndPoint =
+        Offset(size.width, size.height - 100); // End point of the curve
+    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
+        firstEndPoint.dx, firstEndPoint.dy);
+
+    path.lineTo(size.width, 0.0); // Draw straight line to the top-right corner
+    path.close(); // Close the path to complete the shape
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

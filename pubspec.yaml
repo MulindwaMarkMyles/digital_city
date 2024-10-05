@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.2
+  sdk: ^3.4.3
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,7 +38,9 @@ dependencies:
   another_flutter_splash_screen: ^1.2.1
   intro_screen_onboarding_flutter: ^1.0.0
   google_fonts: ^6.2.1
-  flutter_svg_provider: ^1.0.7
+  ionicons: ^0.2.2
+  salomon_bottom_bar: ^3.3.2
+  fluentui_system_icons: ^1.1.259
 
 
 dev_dependencies:
