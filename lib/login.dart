@@ -35,8 +35,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 clipper: CurvedBottomClipper(),
                 child: Container(
                   height: 300, // Adjust the height to your preference
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(
                         94, 68, 137, 255), // Adjust color as needed
                   ),
                 ),
@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor:
                                   Colors.white, // Button background color
-                              foregroundColor: Color.fromRGBO(
+                              foregroundColor: const Color.fromRGBO(
                                   37, 150, 190, 1), // Text and icon color
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 12.0),
@@ -93,8 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             onPressed: () {},
-                            icon: Icon(Ionicons.logo_microsoft),
-                            label: Text('Join using Microsoft')),
+                            icon: const Icon(Ionicons.logo_microsoft),
+                            label: const Text('Join using Microsoft')),
                       ),
                     ),
                     Padding(
@@ -118,8 +118,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             onPressed: () {},
-                            icon: Icon(Ionicons.logo_google),
-                            label: Text('Join using Google')),
+                            icon: const Icon(Ionicons.logo_google),
+                            label: const Text('Join using Google')),
                       ),
                     ),
                   ],
@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.fromLTRB(10.0, 40.0, 10.0, 0.0),
                   child: TextField(
                     controller: emailController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Email',
                       hintText: 'Enter your email',
                       border: OutlineInputBorder(),
@@ -151,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: TextField(
                     controller: passwordController,
                     obscureText: true, // Hides the password input
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Password',
                       hintText: 'Enter your password',
                       border: OutlineInputBorder(),
@@ -170,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: 250,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromRGBO(37, 150, 190, 1), // Button background color
+                        backgroundColor: const Color.fromRGBO(37, 150, 190, 1), // Button background color
                         foregroundColor: Colors.white, // Text and icon color
                         padding: const EdgeInsets.symmetric(
                             horizontal: 16.0, vertical: 12.0),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 
 void main() {
-  runApp(Educ());
+  runApp(const Educ());
 }
 
 class Educ extends StatelessWidget {
@@ -13,23 +13,20 @@ class Educ extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FlutterSplashScreen.scale(
+      home: FlutterSplashScreen.gif(
           gradient: const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.white,
-              Colors.white,
+              Colors.black,
+              
             ],
           ),
-          childWidget: SizedBox(
-            height: 250,
-            child: Image.asset("assets/education_logo_2.png"),
-          ),
+          gifPath: 'assets/loader.gif',
           duration: const Duration(milliseconds: 1500),
-          animationDuration: const Duration(milliseconds: 1000),
-          onAnimationEnd: () => debugPrint("On Scale End"),
-          nextScreen: Onboarding(),
+          gifWidth: 100.0,
+          gifHeight: 100.0,
+          nextScreen: const Onboarding(),
         ),
     );
   }

@@ -86,7 +86,7 @@ class _OnboardingState extends State<Onboarding> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginScreen(),
+                    builder: (context) => const LoginScreen(),
                   ),
                 );
               },
@@ -97,8 +97,8 @@ class _OnboardingState extends State<Onboarding> {
                 clipper: CurvedBottomClipper(),
                 child: Container(
                   height: 300, // Adjust the height to your preference
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(
                         94, 68, 137, 255), // Adjust color as needed
                   ),
                 ),
