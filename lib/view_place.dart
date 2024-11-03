@@ -312,8 +312,8 @@ class ViewPlace extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(FluentIcons.send_20_regular),
-              SizedBox(width: 10.0),
+              const Icon(FluentIcons.send_20_regular),
+              const SizedBox(width: 10.0),
               Text("Book Now",
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500, color: Colors.white)),

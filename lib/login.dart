@@ -1,6 +1,5 @@
 import 'package:education_app/homescreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 
@@ -182,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Homescreen(),
+                            builder: (context) => const Homescreen(),
                           ),
                           (Route<dynamic> route) => false,
                         );
